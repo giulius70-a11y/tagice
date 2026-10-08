@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I.C.E. — In Caso di Emergenza | Suite Definitiva</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #d71920;
+      --primary-dark: #a90f15;
+      --ink: #142231;
+      --muted: #667586;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 20px 40px rgba(215, 25, 32, 0.2);
+    }
+    .hero .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+    }
+    .hero h1 { font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+    .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+
+    /* Sezioni generiche */
+    section { padding: 80px 0; }
+    .section-title { text-align: center; font-size: 2.2rem; font-weight: 800; margin-bottom: 50px; }
+
+    /* Features Grid */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .card {
+      background: var(--surface);
+      padding: 40px 30px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+    .card-icon { font-size: 2.5rem; margin-bottom: 20px; display: inline-block; }
+    .card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; }
+    .card p { color: var(--muted); }
+
+    /* Profili - Colori personalizzati */
+    .profiles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .profile-card {
+      padding: 30px 20px;
+      border-radius: 20px;
+      text-align: center;
+      font-weight: 600;
+    }
+    .profile-card .ico { font-size: 3rem; margin-bottom: 15px; display: block; }
+    .profile-card h4 { font-size: 1.5rem; font-weight: 900; margin-bottom: 10px; }
+    .profile-card p { font-size: 0.95rem; font-weight: 400; opacity: 0.9; }
+
+    .p-ice { background: #fff0f1; color: #d71920; border: 2px solid #d71920; }
+    .p-senior { background: #eaf8f1; color: #16825d; border: 2px solid #16825d; }
+    .p-pet { background: #fff3df; color: #c56a00; border: 2px solid #c56a00; }
+    .p-kids { background: #f6edff; color: #8e44ad; border: 2px solid #8e44ad; }
+    .p-sport { background: #fff0ef; color: #c81e1e; border: 2px solid #c81e1e; }
+
+    /* FAQ */
+    .faq-box { background: white; border-radius: 16px; padding: 25px; margin-bottom: 15px; border: 1px solid #e2e8f0; }
+    .faq-box h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; color: var(--primary-dark); }
+    .faq-box p { color: var(--muted); }
+
+    /* Footer */
+    footer { background: var(--ink); color: white; padding: 60px 20px; text-align: center; }
+    footer h2 { margin-bottom: 20px; font-weight: 800; }
+    .contact-links a {
+      display: inline-block; background: rgba(255,255,255,0.1); color: white; text-decoration: none;
+      padding: 12px 25px; border-radius: 50px; margin: 10px; font-weight: 600; transition: background 0.3s;
+    }
+    .contact-links a:hover { background: var(--primary); }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .section-title { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Hero -->
+  <header class="hero">
+    <div class="container">
+      <div class="badge">Veloce. Sicura. Sempre Aggiornata.</div>
+      <h1>I.C.E. In Caso di Emergenza</h1>
+      <p>La tua scheda d'emergenza personale in Cloud. Una sola grafica, la massima sicurezza. Collegala al tuo Tag NFC o stampala come QR Code e porta i tuoi dati vitali sempre con te.</p>
+    </div>
+  </header>
+
+  <!-- Punti di forza -->
+  <section class="container">
+    <h2 class="section-title">Perché scegliere la suite I.C.E.?</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="card-icon">📲</span>
+        <h3>Zero App Richieste</h3>
+        <p>Funziona nativamente tramite il browser di qualsiasi smartphone (Android o iOS). Avvicina il telefono e la scheda si apre all'istante.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">☁️</span>
+        <h3>Sempre Aggiornata in Cloud</h3>
+        <p>Le tue schede sono salvate su un cloud sicuro. Modifica le terapie o i contatti online: il tuo Tag NFC mostrerà istantaneamente la versione più recente.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📞</span>
+        <h3>Soccorsi Immediati</h3>
+        <p>Fino a 4 contatti di riferimento d'emergenza con pulsanti di chiamata diretta. Chi ti soccorre non perde tempo a cercare in rubrica.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🔒</span>
+        <h3>Massima Privacy</h3>
+        <p>Le pagine salvate includono protezioni e meta-tag avanzati per bloccare i motori di ricerca. I tuoi dati sensibili non finiranno mai su Google.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profili (Le 5 Card Colorate) -->
+  <section style="background: white;">
+    <div class="container">
+      <h2 class="section-title">5 Profilazioni per Ogni Esigenza</h2>
+      <div class="profiles-grid">
+        <div class="profile-card p-ice">
+          <span class="ico">✚</span>
+          <h4>I.C.E. Sanitario</h4>
+          <p>Ideale per tutti. Evidenzia subito gruppo sanguigno, allergie, farmaci e patologie in corso.</p>
+        </div>
+        <div class="profile-card p-senior">
+          <span class="ico">♥</span>
+          <h4>Senior</h4>
+          <p>Pensata per persone anziane o a rischio disorientamento. Include dati identitari e istruzioni rapide.</p>
+        </div>
+        <div class="profile-card p-pet">
+          <span class="ico">🐾</span>
+          <h4>Pet</h4>
+          <p>Per cani e gatti. Raccoglie dati del microchip, informazioni veterinarie e contatti del proprietario.</p>
+        </div>
+        <div class="profile-card p-kids">
+          <span class="ico">★</span>
+          <h4>Kids</h4>
+          <p>Perfetta per gite, scuola e sport. Mostra le indicazioni sanitarie essenziali e i contatti dei tutori.</p>
+        </div>
+        <div class="profile-card p-sport">
+          <span class="ico">⚡</span>
+          <h4>Sport</h4>
+          <p>Per ciclisti e motociclisti. Dati vitali essenziali per la gestione immediata di un eventuale infortunio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background: var(--bg);">
+    <div class="container">
+      <h2 class="section-title">Domande Frequenti</h2>
+      <div class="faq-box">
+        <h4>I miei dati medici rimangono privati?</h4>
+        <p>Assolutamente sì. Le tue informazioni sono ospitate in uno spazio Cloud sicuro e la scheda online contiene tag invisibili ("noindex, nofollow") che impediscono a Google e agli altri motori di ricerca di scansionare e rendere pubblica la tua pagina.</p>
+      </div>
+      <div class="faq-box">
+        <h4>Cosa succede se cambio terapie o numero di telefono?</h4>
+        <p>È il grande vantaggio del Cloud: ti basta aggiornare i tuoi dati sulla piattaforma. Chiunque scansionerà il tuo Tag NFC o il tuo QR Code visualizzerà immediatamente le informazioni aggiornate, senza che tu debba riconfigurare o riscrivere nulla sul chip.</p>
+      </div>
+      <div class="faq-box">
+        <h4>Che tipo di Tag NFC devo usare?</h4>
+        <p>Puoi usare qualsiasi Tag NFC (come i modelli NTAG213, NTAG215 o NTAG216). Poiché sul chip andrai a salvare unicamente l'URL (il link) della tua pagina cloud, l'impiego di memoria è minimo e compatibile al 100% con tutti i modelli in commercio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / Contatti -->
+  <footer>
+    <div class="container">
+      <h2>Pronto a creare la tua scheda?</h2>
+      <p style="opacity: 0.8; margin-bottom: 30px;">Per maggiori informazioni sul progetto, fornitura di Tag NFC personalizzati o supporto alla configurazione, non esitare a contattarmi.</p>
+      <div class="contact-links">
+        <a href="mailto:giulius70@gmail.com">✉️ giulius70@gmail.com</a>
+        <a href="https://wa.me/39000000000" target="_blank">💬 WhatsApp @giulius70</a>
+      </div>
+      <p style="margin-top: 50px; font-size: 12px; opacity: 0.5;">Progetto IDENTIFICAMI - I.C.E.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
