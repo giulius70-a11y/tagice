@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#d71920">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+<title>ICE — Giuliano Gariano</title>
+<style>
+:root{--accent:#d71920;--dark:#a90f15;--soft:#fff0f1;--ink:#142231;--muted:#657483;--line:#dde4eb}*{box-sizing:border-box}body{margin:0;background:var(--soft);color:var(--ink);font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}main{max-width:650px;margin:auto;padding:9px}.card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 10px 35px #00000014}.hero{background:var(--accent);color:#fff;padding:20px 18px 19px}.heroicon{width:50px;height:50px;border-radius:15px;background:#ffffff25;display:grid;place-items:center;font-size:27px;margin-bottom:11px}.hero h1{font-size:29px;line-height:1.08;margin:0 0 4px}.hero p{margin:0;opacity:.9}.content{padding:15px 17px}.high{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:17px}.tile{padding:13px;border-radius:14px;background:var(--soft);border:1px solid color-mix(in srgb,var(--accent) 14%,#fff)}.tile span{display:block;font-size:11px;text-transform:uppercase;color:var(--accent);font-weight:900}.tile b{display:block;font-size:21px;margin-top:2px;word-break:break-word}.title{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);font-weight:900;margin:17px 0 5px}.field{padding:12px 0;border-top:1px solid var(--line)}.label{font-size:11px;text-transform:uppercase;color:var(--muted);font-weight:900}.value{margin-top:3px;white-space:pre-wrap}.contact{margin-top:18px;padding:14px;border-radius:15px;background:var(--soft)}.contact-block{margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}.contact-block:first-of-type{margin-top:0;padding-top:0;border-top:0}.call{display:block;text-align:center;background:var(--accent);color:#fff;text-decoration:none;border-radius:11px;padding:13px;margin-top:8px;font-weight:900}.qr{margin-top:16px;border:1px dashed #b7c1cb;border-radius:13px;padding:12px;text-align:center;color:var(--muted)}.footer{padding:18px 17px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);text-align:center}.info-tag{margin-top:12px;padding:12px;background:var(--soft);border-radius:12px;font-size:15px;font-weight:800;color:var(--ink);line-height:1.4}.info-tag a{color:var(--accent);text-decoration:none}@media(max-width:390px){.high{grid-template-columns:1fr}.hero h1{font-size:26px}.content{padding:14px}}@media print{body{background:#fff}.call,.qr,.info-tag{display:none}}
+</style>
+</head>
+<body>
+<main><article class="card"><header class="hero"><div class="heroicon">✚</div><h1>ICE</h1><p>In Case of Emergency</p></header><div class="content"><div class="high"><div class="tile"><span>Gruppo sanguigno</span><b>A+</b></div><div class="tile"><span>Allergie</span><b>nessuna</b></div></div><div class="title">Informazioni</div><div id="data"></div><div id="contact"></div><div class="qr">▦ )))<br><b>QR Code / NFC</b><br>Accesso rapido alla scheda</div></div><footer class="footer">Scheda autonoma • senza database • ottimizzata per smartphone<br>Non sostituisce i servizi di emergenza. In caso di pericolo immediato contatta il numero di emergenza locale.<div class="info-tag">Per info su questo TAG contattami su <a href="mailto:giulius70@gmail.com">giulius70@gmail.com</a> oppure su Whatsapp @giulius70</div></footer></article></main>
+<script>
+const p = {"version":"ICE","data":{"name":"Giuliano Gariano","birth":"13/10/1970","blood":"A+","allergies":"nessuna","therapy":"Cotareg 160 mg 1/die - Eutirox 50mg 2/die","conditions":"Ipertensione / Ipotiroidismo","devices":"nessuno","doctor":"","doctorPhone":"","emergency":"","extra":""},"contact":"Marilena A. (compagna)","phone":"3246952644","contact2":"Adele T. (mamma)","phone2":"3382079700","contact3":"","phone3":"","contact4":"","phone4":"","message":"","url":""};
+const labels = {"name":"Nome e cognome","birth":"Data di nascita","blood":"Gruppo sanguigno","allergies":"Allergie","therapy":"Terapia / farmaci","conditions":"Patologie / condizioni rilevanti","devices":"Dispositivi / impianti","doctor":"Medico / struttura di riferimento","doctorPhone":"Telefono medico / struttura","emergency":"Indicazioni per emergenza"};
+function add(id,label,value){
+  if(!value) return;
+  const e = document.createElement("div");
+  e.className = "field";
+  e.innerHTML = '<div class="label"></div><div class="value"></div>';
+  e.children[0].textContent = label;
+  e.children[1].textContent = value;
+  document.getElementById(id).appendChild(e);
+}
+add("data", labels["name"] || "name", "Giuliano Gariano");
+add("data", labels["birth"] || "birth", "13/10/1970");
+add("data", labels["therapy"] || "therapy", "Cotareg 160 mg 1/die - Eutirox 50mg 2/die");
+add("data", labels["conditions"] || "conditions", "Ipertensione / Ipotiroidismo");
+add("data", labels["devices"] || "devices", "nessuno");
+if(p.contact||p.phone||p.contact2||p.phone2||p.contact3||p.phone3||p.contact4||p.phone4||p.message){
+  const c = document.createElement("div");
+  c.className = "contact";
+  c.innerHTML = "<div class='title' style='margin-top:0'>Contatti di riferimento</div>";
+  document.getElementById("contact").appendChild(c);
+  const contacts = [
+    {name: p.contact, phone: p.phone, label: "1° Contatto"},
+    {name: p.contact2, phone: p.phone2, label: "2° Contatto"},
+    {name: p.contact3, phone: p.phone3, label: "3° Contatto"},
+    {name: p.contact4, phone: p.phone4, label: "4° Contatto"}
+  ];
+  contacts.forEach((item, idx) => {
+    if(item.name || item.phone){
+      const cb = document.createElement("div");
+      cb.className = "contact-block";
+      if(item.name){
+        const f = document.createElement("div");
+        f.className = "field";
+        f.style.border = "0";
+        f.style.padding = "4px 0";
+        f.innerHTML = '<div class="label"></div><div class="value"></div>';
+        f.children[0].textContent = item.label;
+        f.children[1].textContent = item.name;
+        cb.appendChild(f);
+      }
+      if(item.phone){
+        const a = document.createElement("a");
+        a.className = "call";
+        if(idx > 0) a.style.background = "var(--dark)";
+        a.href = "tel:" + item.phone.replace(/[^\d+]/g,"");
+        a.textContent = "☎ Chiama " + item.label;
+        cb.appendChild(a);
+      }
+      c.appendChild(cb);
+    }
+  });
+  add("contact", "Messaggio", p.message);
+}
+</script>
+</body>
+</html>
