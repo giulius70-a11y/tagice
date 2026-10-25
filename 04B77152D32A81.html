@@ -14,7 +14,7 @@
 <body>
 <main><article class="card"><header class="hero"><div class="heroicon">✚</div><h1>ICE</h1><p>In Case of Emergency</p></header><div class="content"><div class="high"><div class="tile"><span>Gruppo sanguigno</span><b>A+</b></div><div class="tile"><span>Allergie</span><b>nessuna</b></div></div><div class="title">Informazioni</div><div id="data"></div><div id="contact"></div><div class="qr">▦ )))<br><b>QR Code / NFC</b><br>Accesso rapido alla scheda</div></div><footer class="footer">Scheda autonoma • senza database • ottimizzata per smartphone<br>Non sostituisce i servizi di emergenza. In caso di pericolo immediato contatta il numero di emergenza locale.<div class="info-tag">Per info su questo TAG contattami su <a href="mailto:giulius70@gmail.com">giulius70@gmail.com</a> oppure su Whatsapp @giulius70</div></footer></article></main>
 <script>
-const p = {"version":"ICE","data":{"name":"Giuliano Gariano","birth":"13/10/1970","blood":"A+","allergies":"nessuna","therapy":"Cotareg 160 mg 1/die - Eutirox 50mg 2/die","conditions":"Ipertensione / Ipotiroidismo","devices":"nessuno","doctor":"","doctorPhone":"","emergency":"","extra":""},"contact":"Marilena A. (compagna)","phone":"3246952644","contact2":"Adele T. (mamma)","phone2":"3382079700","contact3":"","phone3":"","contact4":"","phone4":"","message":"","url":""};
+const p = {"version":"ICE","data":{"name":"Giuliano Gariano","birth":"13/10/1970","blood":"A+","allergies":"nessuna","therapy":"Cotareg 160 mg 1/die - Eutirox 50mg 1/die","conditions":"Ipertensione / Ipotiroidismo","devices":"nessuno","doctor":"","doctorPhone":"","emergency":"","extra":""},"contact":"Marilena A. (compagna)","phone":"3246952644","contact2":"Adele T. (mamma)","phone2":"3382079700","contact3":"","phone3":"","contact4":"","phone4":"","message":"","url":""};
 const labels = {"name":"Nome e cognome","birth":"Data di nascita","blood":"Gruppo sanguigno","allergies":"Allergie","therapy":"Terapia / farmaci","conditions":"Patologie / condizioni rilevanti","devices":"Dispositivi / impianti","doctor":"Medico / struttura di riferimento","doctorPhone":"Telefono medico / struttura","emergency":"Indicazioni per emergenza"};
 function add(id,label,value){
   if(!value) return;
@@ -27,7 +27,7 @@ function add(id,label,value){
 }
 add("data", labels["name"] || "name", "Giuliano Gariano");
 add("data", labels["birth"] || "birth", "13/10/1970");
-add("data", labels["therapy"] || "therapy", "Cotareg 160 mg 1/die - Eutirox 50mg 2/die");
+add("data", labels["therapy"] || "therapy", "Cotareg 160 mg 1/die - Eutirox 50mg 1/die");
 add("data", labels["conditions"] || "conditions", "Ipertensione / Ipotiroidismo");
 add("data", labels["devices"] || "devices", "nessuno");
 if(p.contact||p.phone||p.contact2||p.phone2||p.contact3||p.phone3||p.contact4||p.phone4||p.message){
